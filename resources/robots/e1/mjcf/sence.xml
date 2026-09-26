@@ -1,0 +1,40 @@
+<mujoco model="E1 12dof parkour scene">
+  <include file="E1_12dof.xml"/>
+  <include file="terrain.xml"/>
+
+  <statistic center="0 0 0.8" extent="8"/>
+
+  <visual>
+    <headlight diffuse="0.85 0.85 0.85" ambient="0.55 0.55 0.55"
+               specular="0.15 0.15 0.15"/>
+    <rgba haze="0.55 0.65 0.75 1"/>
+    <global azimuth="120" elevation="-20"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.65 0.78 0.95"
+             rgb2="0.18 0.25 0.35"
+             width="512" height="3072"/>
+  </asset>
+
+  <worldbody>
+    <!--
+      白天主光源：
+      name        光源名称，仅用于查找和调试。
+      pos         光源在世界坐标系中的位置 (x, y, z)。对于方向光，主要影响
+                  编辑器中的位置表达；照明主要由 dir 决定。
+      dir         光线照射方向向量 (x, y, z)，无需归一化；这里表示从前上方向下照射。
+                  增大 x/y 分量会让光线更倾斜，z 越接近 -1 越接近从正上方照射。
+      directional 使用平行方向光，类似距离很远的太阳，不随物体距离衰减。
+      castshadow  是否产生阴影；false 可获得更均匀的画面并降低渲染开销。
+      diffuse     直射到物体表面的 RGB 亮度；整体画面太暗时可适当提高。
+      ambient     不依赖表面朝向的 RGB 基础亮度；提高它可以减轻背光面的黑暗。
+      specular    表面高光的 RGB 强度；过高会让机器人和地形出现刺眼亮斑。
+      RGB 数值通常从 0 到 1，数值越大，对应分量越亮。
+    -->
+    <light name="sun" pos="0 -4 10" dir="0.25 0.15 -1"
+           directional="true" castshadow="false"
+           diffuse="0.9 0.9 0.9" ambient="0.0 0.0 0.0"
+           specular="0.1 0.1 0.1"/>
+  </worldbody>
+</mujoco>
