@@ -1,0 +1,21 @@
+# Install Isaac Gym Preview 4 separately before installing this project.
+# PyTorch and torchvision must match the server CUDA/driver environment.
+torch==1.13.1
+torchvision==0.14.1
+numpy==1.23.5
+scipy==1.10.1
+warp-lang==1.10.1
+wandb
+tensorboard==2.14.0
+tqdm
+opencv-python
+mujoco==3.2.3
+mujoco-python-viewer
+matplotlib
+sympy
+pybullet
+pyfqmr
+trimesh
+GitPython
+ninja
+onnx

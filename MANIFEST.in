@@ -1,0 +1,4 @@
+recursive-include humanoid/envs/datasets/e1/txt_v1 *.txt
+recursive-include resources/robots/e1/urdf *.urdf
+recursive-include resources/robots/e1/mjcf *.xml
+recursive-include resources/robots/e1/meshes *.STL
